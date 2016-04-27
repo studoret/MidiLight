@@ -136,9 +136,6 @@ midiLight_read()
             }
         }
     }
-
-out:
-    return;
 }
 
 void
