@@ -126,9 +126,13 @@ midiLight_read()
                             noteDown = LOW;
                         }
                         if (noteDown == LOW) {
-                            cbNoteOff(channel, note, incomingByte);
+                            if (cbNoteOff != NULL) {
+                                cbNoteOff(channel, note, incomingByte);
+                            }
                         } else {
-                            cbNoteOn(channel, note, incomingByte);
+                            if (cbNoteOn != NULL) {
+                                cbNoteOn(channel, note, incomingByte);
+                            }
                         }
                     }
                     state = MIDI_STATE_STATUS_WAITING;  // reset state machine to start
