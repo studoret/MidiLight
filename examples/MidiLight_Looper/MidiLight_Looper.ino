@@ -54,7 +54,11 @@
 #define KEY_C1       (36)  // reserved to switch RECORD/PLAYBACK on track 1
 #define KEY_C1_SHARP (37)  // reserved to switch RECORD/PLAYBACK on track 2
 #define KEY_D1       (38)  // reserved to switch RECORD/PLAYBACK on track 3
-#define LAST_RESERVED_KEY KEY_D1 
+#define LAST_RESERVED_KEY (KEY_D1)
+
+#define CHANNEL_1    (0x00)
+#define CHANNEL_2    (0x01)
+#define CHANNEL_DRUM (0x09)
 
 static unsigned long evtDelay = 0;
 static unsigned long currentTime = 0;
@@ -183,11 +187,11 @@ setup()
 
     // config tracks
     tracks[0].key = KEY_C1;
-    tracks[0].playbackChannel = 1;
+    tracks[0].playbackChannel = CHANNEL_1;
     tracks[1].key = KEY_C1_SHARP;
-    tracks[1].playbackChannel = 2;
+    tracks[1].playbackChannel = CHANNEL_DRUM;
     tracks[2].key = KEY_D1;
-    tracks[2].playbackChannel = 3;
+    tracks[2].playbackChannel = CHANNEL_2;
     for (tIdx = 0; tIdx < REC_MAX; tIdx++) {
         tracks[tIdx].eIdx = 0;
         tracks[tIdx].state = REC_STATE_IDLE;
