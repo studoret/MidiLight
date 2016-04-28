@@ -4,11 +4,14 @@ Light Midi library for Arduino
 ## Features
 -    Implement the Midi Running Status algorithm from http://www.blitter.com/~russtopia/MIDI/~jglatt/tech/midispec/run.htm
 -    Use hardware serial pins of Arduino uno
+-    Allow to listen and sends Note On/Off Event messages
+-    The Midilight_Looper example allows to record and play three loops
 -    Tested with Yamaha digital keyboard PSP-E323
 
 ## Todo
--    Code Midi output API
--    Manage channels (at this time only channel 0 is taken in account)
+-    Manage input channels (at this time only channel 0 is taken in account)
+-    Manage Program Change messages
+-    Improve the Midilight_Looper example with program change feature
 
 ## Schematic
 
